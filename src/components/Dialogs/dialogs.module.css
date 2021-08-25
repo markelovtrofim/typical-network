@@ -1,0 +1,30 @@
+.general {
+    background-color: #ffffff;
+    display: flex;
+    margin-left: 10px;
+    height: 605px;
+}
+
+.contact {
+    width: 220px;
+}
+
+.messages__content {
+    background-color: #ffffff;
+    border-left: 10px solid rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+.messages__inner {
+    padding: 10px;
+}
+
+.link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.textarea {
+    margin-top: 20px;
+}

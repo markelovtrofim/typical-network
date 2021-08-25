@@ -1,0 +1,26 @@
+.item {
+    border-bottom: 1px solid #e5e5e5;
+    color: black;
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.circle {
+    background-color: #000000;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    margin: 10px 10px 10px 0;
+}
+
+.post {
+    margin-left: 20px;
+}
+
+.time {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}

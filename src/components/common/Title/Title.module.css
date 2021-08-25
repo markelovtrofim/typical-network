@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.arrow {
+    margin-left: 5px;
+    fill: #2f92e1;
+    width: 9px;
+    height: 9px;
+}
+
+.title {
+    font-size: 18px;
+}

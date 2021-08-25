@@ -1,0 +1,27 @@
+.main {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    height: 100%;
+    width: 555px;
+}
+
+.textarea {
+    width: 77%;
+    height: 50px;
+    outline: none;
+    -moz-appearance: none;
+    border: 1px solid #ffffff;
+    resize: none;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.general_post {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+}
