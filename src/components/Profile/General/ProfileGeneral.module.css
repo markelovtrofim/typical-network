@@ -49,12 +49,13 @@
 }
 
 .status {
-    margin-top: 15px;
+    padding: 10px 50px;
 }
 
 
 .button_box {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .logout {
@@ -62,29 +63,37 @@
     color: #ffffff;
     border: 0;
     font-size: 14px;
-    padding: 5px 20px;
-    background-color: #fa1102;
-    border-radius: 7px;
+    padding: 10px 20px;
+    background-color: #ed5f68;
+    border-radius: 3px;
     transition: background-color 0.5s;
 }
 
 .logout:hover {
-    background-color: #ac000e;
+    background-color: #dd313c;
 }
 
 .refactor {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
     cursor: pointer;
-    color: #000000;
+    color: #ffffff;
     border: 0;
-    font-size: 14px;
-    padding: 5px 20px;
-    background-color: #e5e6eb;
-    border-radius: 7px;
-    transition: 0.1s;
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: #a5a7aa;
+    border-radius: 3px;
+    transition: 0.5s;
 }
 
 .refactor:hover {
-    color: #ffffff;
-    background-color: #a5a7aa;
+    background-color: #8a8a8a;
 }
 
+.svg {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    fill: #ffffff;
+}

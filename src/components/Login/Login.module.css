@@ -6,10 +6,9 @@
 .general {
     background-color: #ffffff;
     border-radius: 10px;
-    margin: 270px auto;
+    margin: 285px auto;
     text-align: center;
     width: 400px;
-    height: 350px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -18,7 +17,7 @@
     justify-content: center;
     text-decoration: none;
     font-family: Breda;
-    padding: 5px 0 15px 0;
+    padding: 5px 0 10px 0;
 }
 
 .logo_left {
@@ -30,7 +29,9 @@
     color: #5785BB;
 }
 
+
 .inner {
+    text-align: center;
     height: 100%;
     padding: 30px 20px 20px 20px;
 }
@@ -43,7 +44,11 @@
     border-radius: 10px;
     outline: none;
     -moz-appearance: none;
-    border: 1px solid #d7d7d7 /* указание этого свойства также удалит обводку в FireFox */
+    border: 1px solid #d7d7d7; /* указание этого свойства также удалит обводку в FireFox */
+}
+
+.password {
+    -webkit-text-security: disc;
 }
 
 .input:focus {
@@ -93,4 +98,13 @@
 
 .register:hover:before {
     width: 100%;
+}
+
+.test {
+    font-size: 10px;
+    margin-bottom: 13px;
+}
+
+.test span {
+    margin-right: 7px;
 }

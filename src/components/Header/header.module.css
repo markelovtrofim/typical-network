@@ -108,3 +108,18 @@
     color: #2f92e1;
     fill: #2f92e1;
 }
+
+@media (max-width: 880px) {
+    .link {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 770px) {
+    nav {
+        opacity: 0;
+    }
+    .login {
+        opacity: 0;
+    }
+}

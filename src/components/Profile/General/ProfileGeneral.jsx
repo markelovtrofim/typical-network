@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './ProfileGeneral.module.css';
 import defaultUserImage from '../../../assets/img/default-user.png';
-import {ClockSvg} from '../../common/Svg';
+import {ClockSvg, DeleteSvg, PenSvg} from '../../common/Svg';
 
 export let Time = (props) => {
     return (
@@ -20,7 +20,7 @@ export let Avatar = (props) => {
     </div>
 };
 
-let ProfileGeneral = ({profile, isOwner, savePhoto, logout, setEditMode}) => {
+let ProfileGeneral = ({profile, isOwner, logout, setEditMode, status}) => {
     const logoutOnClick = () => {
         logout()
     }
@@ -32,13 +32,11 @@ let ProfileGeneral = ({profile, isOwner, savePhoto, logout, setEditMode}) => {
                     <Avatar width="150" height="150" img={profile.photos.large != null ? profile.photos.large : defaultUserImage}/>
                     <h2 className={styles.full_name}>{profile.fullName}</h2>
                     <Time styles={styles.time} text="был(а) в сети в пределах нашей эры"/>
-                    <p className={styles.status}>
-                        Привет мир это статус заглушка. Когда dev созреет он вставит статус каждого пользователя. Всем мир.
-                    </p>
+                    <p className={styles.status}>{status ? status : <i>статус не установлен</i>}</p>
                     {isOwner &&
                         <div className={styles.button_box}>
-                            <button className={styles.refactor} onClick={() => setEditMode(true)}>Редактировать</button>
-                            <button className={styles.logout} onClick={logoutOnClick}>Выйти</button>
+                            <div><button className={styles.refactor} onClick={() => setEditMode(true)}><PenSvg className={styles.svg}/>Редактировать</button></div>
+                            <div><button className={styles.logout} onClick={logoutOnClick}><DeleteSvg className={styles.svg}/>Выйти</button></div>
                         </div>
                     }
                 </div>

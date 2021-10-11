@@ -1,6 +1,11 @@
 .inner{
-    margin: 40px 0;
+    padding: 40px 0;
     display: flex;
     justify-content: space-between;
 }
 
+@media (max-width: 770px) {
+    .inner {
+        display: block
+    }
+}

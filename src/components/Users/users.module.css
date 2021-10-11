@@ -9,7 +9,7 @@
 
 .title {
     display: block;
-    padding: 30px 0;
+    padding: 28px 0;
 }
 
 .items {
@@ -33,16 +33,22 @@
 }
 
 .name {
+    border: 0;
+    cursor: pointer;
+    background-color: #f0f2f5;
     font-weight: 700;
-    text-decoration: none;
     font-size: 16px;
     color: #000000;
     margin-bottom: 7px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .name:hover {
     color: #2f92e1;
+}
+
+.item:hover .name {
+    background-color: white;
 }
 
 .active {

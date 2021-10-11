@@ -1,0 +1,102 @@
+.main {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 50px auto 50px auto;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.inner {
+    padding: 20px;
+}
+
+.header {
+    font-weight: 700;
+    font-size: 25px;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_button {
+    cursor: pointer;
+    border: 0;
+    background-color: #ffffff;
+    color: #2f92e1;
+    text-decoration: none;
+}
+
+.photo_change {
+    cursor: pointer;
+    font-size: 13px;
+    color: #2f92e1;
+}
+
+.img {
+    text-align: center;
+}
+
+form p {
+    width: 120px;
+}
+
+.item_item {
+    margin: 10px;
+    display: flex;
+}
+
+.input {
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    width: 200px;
+}
+
+.input:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.desc {
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    width: 200px;
+    height: 100px;
+    resize: none;
+}
+
+.desc:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.desc:focus {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.buttons_box {
+    display: flex;
+    align-items: center;
+}
+
+.back {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.back:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
