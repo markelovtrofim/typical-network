@@ -31,15 +31,14 @@ const Profile = (props: any) => {
             dispatch(getStatus(userId))
         }
     }, [])
-    let [editMode, setEditMode] = useState(false)
+    let [editMode, setEditMode] = useState<boolean>(false)
     if (!state.isAuth) {
         return <Redirect to="/login"/>
     }
-    const onsubmit = (data: any) => {
-        // @ts-ignore
-        dispatch(saveProfile(data)).then(() => {
-            setEditMode(false)
-        })
+    const onsubmit = async (data: any) => {
+        debugger
+        await dispatch(saveProfile(data));
+        setEditMode(false)
         dispatch(updateStatus(data.status))
     }
 

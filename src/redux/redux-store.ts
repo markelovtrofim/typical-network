@@ -19,6 +19,8 @@ let reducers = combineReducers({
     func: funcReducer,
     form: formReducer
 })
+type RootReducerType = typeof reducers
+export type AppStateType = ReturnType<RootReducerType>
 
 const store = createStore(reducers, compose(applyMiddleware(thunkMiddleware)))
 
