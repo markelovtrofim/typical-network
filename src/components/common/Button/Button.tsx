@@ -1,4 +1,11 @@
-import styles from "./Button.module.css"
 import React from "react"
+import styles from "./Button.module.css"
 
-export const Button = (props: any) => <button className={styles.button}>{props.text}</button>
+interface ButtonPropsType {
+  children: React.ReactNode
+  onClick: () => void
+}
+
+export const Button: React.FC<ButtonPropsType> = ({children, onClick}) => {
+  return <button onClick={onClick} className={styles.button}>{children}</button>
+}

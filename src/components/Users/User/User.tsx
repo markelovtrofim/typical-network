@@ -1,6 +1,8 @@
 import React from "react"
+// @ts-ignore
 import style from "../Users.module.css"
 import {Avatar, Time} from "../../Profile/General/ProfileGeneral"
+// @ts-ignore
 import defaultUserImage from "../../../assets/img/default-user.png"
 import {isFollow, isUnFollow} from "../../../redux/user-reducer"
 import {useDispatch} from "react-redux"

@@ -1,0 +1,11 @@
+.users {
+  &__title {
+    display: block;
+    padding: 28px 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

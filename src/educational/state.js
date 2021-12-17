@@ -2,7 +2,7 @@ import profileReducer from "../redux/profile-reducer";
 import messagesReducer from "../redux/messages-reducer";
 
 let store = {
-    _state: y{
+    _state: {
         profilePage: {
             posts: [
                 {id: 1, message: "Visit my website.", likesCount: "111"},

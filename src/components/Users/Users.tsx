@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react"
+// @ts-ignore
 import style from "./Users.module.css"
 import "../../App.css"
 import {User} from "./User/User"
