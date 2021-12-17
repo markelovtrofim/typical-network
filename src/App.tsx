@@ -1,6 +1,6 @@
 import React from "react"
 import "./App.css"
-import {useDispatch, useSelector} from "react-redux"
+import {useSelector} from "react-redux"
 import {HashRouter, Redirect, Route} from "react-router-dom"
 import {Switch} from "react-router-dom"
 import {Header} from "./components/Header/Header"
@@ -14,7 +14,6 @@ import {AppStateType} from "./redux/store";
 
 const App: React.FC = React.memo(() => {
   const isAuth = useSelector((state: AppStateType) => state.auth.isAuth)
-  const dispatch = useDispatch()
   return (
     <HashRouter>
       <Header/>

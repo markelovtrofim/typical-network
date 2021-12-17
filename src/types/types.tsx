@@ -66,6 +66,11 @@ export type navDataType = {
   text: string
 }
 
+export interface FilterType {
+  term: string
+  friends: null | boolean
+}
+
 export interface UserType {
   name: string
   id: number

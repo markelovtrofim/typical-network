@@ -6,12 +6,14 @@ import {useDispatch, useSelector} from 'react-redux';
 import '../../App.css';
 // @ts-ignore
 import styles from "./Users.module.scss";
-import {getUsersSelector} from "../../redux/selectors/users-selector";
-import {getUsers} from "../../redux/reducers/users-reducer";
+import {getUsersSelector, getCurrentPageSelector} from "../../redux/selectors/users-selector";
+import {requestUsers} from "../../redux/reducers/users-reducer";
+import {actions} from '../../redux/reducers/users-reducer';
 
 export const Users = () => {
   const dispatch = useDispatch();
-  const users = useSelector(getUsersSelector)
+  const users = useSelector(getUsersSelector);
+  const currentPage = useSelector(getCurrentPageSelector);
   // const state = useSelector((state: any) => ({
   //   users: state.usersPage.users,
   //   pageSize: state.usersPage.pageSize,
@@ -22,7 +24,7 @@ export const Users = () => {
   //   disable: state.usersPage.disable
   // }))
   useEffect(() => {
-    dispatch(getUsers(1, 20))
+    dispatch(requestUsers(1, 20, {term: '', friends: null}))
   }, [dispatch])
 
   return (
