@@ -1,0 +1,74 @@
+.track {
+  cursor: default;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  background-color: #2a2a2a;
+  width: 100%;
+  margin-bottom: 2px;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+
+.track:hover {
+  background-color: #2a2a2a;
+}
+
+.track_left {
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+}
+
+.track_right {
+  display: flex;
+  opacity: 0.5;
+}
+
+.track_icon_box {
+  width: 35px;
+  height: 35px;
+}
+
+
+.play_icon_box {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.play_icon {
+  color: #ffffff;
+  width: 21px !important;
+  height: 21px !important;
+}
+
+.info {
+  margin-left: 20px;
+}
+
+.track_name {
+  font-family: SpotifyFont, 'Open Sans', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.artist_name {
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.track_listens {
+  margin-right: 150px;
+  min-width: 100px;
+  text-align: left;
+}
+
+.track_time {
+  margin-right: 10px;
+}
+
+.skeleton {
+  background-color: #555555 !important;
+}

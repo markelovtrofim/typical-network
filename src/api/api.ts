@@ -1,5 +1,5 @@
 import axios from "axios"
-import {UserType} from "../types/types"
+import {UserType} from "../types"
 
 export const instance = axios.create({
     withCredentials: true,
@@ -59,7 +59,7 @@ export const authAPI = {
     getMe() {
         return instance.get("auth/me")
     },
-    signInAPI(email: string, password: string, rememberMe: boolean, captcha: string) {
+    signInAPI(email: string, password: string, rememberMe: boolean = true, captcha: string = '') {
         return instance.post("auth/login", {email, password, rememberMe, captcha})
             .then(response => response.data)
     },

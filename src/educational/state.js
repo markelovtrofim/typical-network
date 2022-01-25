@@ -1,5 +1,5 @@
-import profileReducer from "../redux/profile-reducer";
-import messagesReducer from "../redux/messages-reducer";
+import profile from "../redux/reducers/profile";
+import messages from "../redux/reducers/messages";
 
 let store = {
     _state: {
@@ -40,8 +40,8 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action){
-        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
-        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messages(this._state.messagesPage, action);
+        this._state.profilePage = profile(this._state.profilePage, action);
         this._callSubscriber(this._state);
     }
 };

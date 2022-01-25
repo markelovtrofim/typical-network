@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@font-face {
+    font-family: Breda;
+    src: url('../../assets/fonts/BredaTwo.ttf');
+}
+
+.general {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    z-index: 1000;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.right_block {
+    display: flex;
+    text-align: center;
+}
+
+.link {
+    position: relative;
+    color: #a5a7aa;
+    margin: 0 15px;
+    padding: 32px 0;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+}
+
+.link:hover:before, .link:hover {
+    color: #ffffff;
+    transform: scaleX(1);
+}
+
+.active, .active.link:before{
+    color: #ffffff;
+    transform: scaleX(1);
+}
+
+.login {
+    display: flex;
+}
+
+.login_icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    fill: #a5a7aa;
+    transition: fill 0.4s;
+}
+
+.login_link {
+    width: 150px;
+    color: #a5a7aa;
+    font-size: 15px;
+    text-decoration: none;
+    margin-left: 7px;
+    padding: 32px 0;
+    transition: color 0.4s;
+    position: relative;
+}
+
+.login_link:hover {
+    color: #2f92e1;
+}
+
+.login_link:hover .login_icon {
+    fill: #2f92e1;
+}
+
+.active_login .login_icon, .active_login{
+    color: #2f92e1;
+    fill: #2f92e1;
+}
+
+@media (max-width: 880px) {
+    .link {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 770px) {
+    nav {
+        opacity: 0;
+    }
+    .login {
+        opacity: 0;
+    }
+}

@@ -3,10 +3,10 @@ import {useDispatch} from 'react-redux';
 
 // @ts-ignore
 import styles from './User.module.scss';
-import {Avatar, Time} from '../../../components/Profile/General/ProfileGeneral';
+import {Avatar, Time} from '../../Profile/General/ProfileGeneral';
 // @ts-ignore
 import defaultUserImage from '../../../assets/img/default-user.png';
-import {follow, unFollow} from '../../../redux/reducers/users-reducer';
+import {follow, unFollow} from '../../../redux/reducers/users';
 
 
 interface UserPropsType {

@@ -1,28 +1,27 @@
-import {applyMiddleware, combineReducers, createStore, compose} from "redux"
-import messagesReducer from "./messages-reducer"
-import profileReducer from "./profile-reducer"
-import userReducer from "./user-reducer"
-import navbarReducer from "./navbar-reducer"
-import authReducer from "./auth-reducer"
-import thunkMiddleware from "redux-thunk"
-import { reducer as formReducer } from "redux-form"
-import funcReducer from "./func-reducer"
-import appReducer from "./app-reducer"
-import {usersReducer} from "./reducers/users-reducer";
+import {applyMiddleware, combineReducers, createStore, compose} from "redux";
+import thunkMiddleware from "redux-thunk";
+import { reducer as formReducer } from "redux-form";
+
+import {usersReducer, musicReducer} from "./reducers";
+
+import messages from "./reducers/messages";
+import profile from "./reducers/profile";
+import auth from "./reducers/auth.reducer";
+import func from "./reducers/func";
+import app from "./reducers/app";
 
 let reducers = combineReducers({
-    app: appReducer,
-    profilePage: profileReducer,
-    messagesPage: messagesReducer,
-    usersPage: userReducer,
-    navbar: navbarReducer,
-    auth: authReducer,
-    func: funcReducer,
+    app: app,
+    profile: profile,
+    users: usersReducer,
+    music: musicReducer,
+    messages: messages,
+    auth: auth,
+    func: func,
     form: formReducer,
-    users: usersReducer
-})
+});
 
-const store = createStore(reducers, compose(applyMiddleware(thunkMiddleware)))
+const store = createStore(reducers, compose(applyMiddleware(thunkMiddleware)));
 
 declare global {
     interface Window {
@@ -33,7 +32,7 @@ declare global {
 type RootReducerType = typeof reducers
 export type AppStateType = ReturnType<RootReducerType>
 export type InferActionsTypes<T> = T extends { [keys: string]: (...args: any[]) => infer U } ? U : never
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = typeof store.dispatch
 
-window.__store__ = store
-export default store
+window.__store__ = store;
+export default store;
