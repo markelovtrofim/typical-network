@@ -9,11 +9,11 @@ type initialStateType = {
 }
 
 let initialState = {
-  newMessageBody: "pines",
+  newMessageBody: "normal message",
   messages: [
-    {id: 1, message: 'Your Aboba.'},
-    {id: 2, message: 'No! Your Aboba.'},
-    {id: 3, message: 'Ok. We Aboba!'}],
+    {id: 1, message: 'First message'},
+    {id: 2, message: 'Second message'},
+    {id: 3, message: 'Third message'}],
   names: [
     {id: 1, name: 'Johnny'},
     {id: 2, name: 'Olga'},

@@ -1,14 +1,12 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 import styles from './Profile.module.css'
 import {Redirect} from "react-router-dom"
 import ProfileGeneral from "./General/ProfileGeneral"
 import {ProfileInfo} from "./Information/ProfileInfo"
 import Form from "./Form/Form"
 import {withRouter} from "react-router-dom"
-import {useDispatch, useSelector} from "react-redux"
-import {getUserProfile, savePhoto, saveProfile, getStatus, updateStatus} from "../../redux/reducers/profile";
-import {actions} from "../../redux/reducers/profile";
-import {AppStateType} from "../../redux/store";
+import {useDispatch} from "react-redux"
+import {savePhoto, saveProfile, updateStatus} from "../../redux/reducers/profile";
 
 const Profile: React.FC = React.memo((props: any) => {
   // const state = useSelector((state: AppStateType) => ({
@@ -17,19 +15,8 @@ const Profile: React.FC = React.memo((props: any) => {
   //   isAuth: state.auth.isAuth
   // }))
   const dispatch = useDispatch()
-  useEffect(() => {
-    let userId = props.match.params.userId
-    if (state.userId === Number(props.match.params.userId)) {
-      dispatch(actions.setOwner(true))
-    } else {
-      dispatch(actions.setOwner(false))
-    }
-    if (state.id === undefined) {
-      dispatch(getUserProfile(userId))
-      dispatch(getStatus(userId))
-    }
-  }, [dispatch, props.match.params.userId, state.profile.id, state.userId])
-  let [editMode, setEditMode] = useState<boolean>(false)
+
+  let [editMode, setEditMode] = React.useState<boolean>(false)
   if (!state.isAuth) {
     return <Redirect to="/login"/>
   }

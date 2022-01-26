@@ -1,5 +1,5 @@
 import {AppDispatch, InferActionsTypes} from '../store';
-import {usersAPI} from '../../api/users-api';
+import {usersApi} from '../../api/users.api';
 import {FilterType, UserType} from '../../types';
 
 
@@ -62,7 +62,7 @@ export const requestUsers = (page: number, pageSize: number, filter: FilterType)
   dispatch(actions.isLoading(true));
   dispatch(actions.setCurrentPage(page));
   dispatch(actions.setFilter(filter))
-  const data = await usersAPI.getUsers(page, pageSize, filter.term, filter.friends);
+  const data = await usersApi.getUsers(page, pageSize, filter.term, filter.friends);
   dispatch(actions.setUsers(data.items));
   dispatch(actions.setTotalUsersCount(data.totalCount));
   dispatch(actions.isLoading(false));
@@ -80,5 +80,4 @@ export const unFollow = (id: number) => async (dispatch: AppDispatch) => {
 type InitialStateType = typeof initialState
 type ActionsTypes = InferActionsTypes<typeof actions>
 
-
-export default usersReducer;
+export default usersReducer

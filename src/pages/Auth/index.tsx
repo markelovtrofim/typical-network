@@ -1,9 +1,8 @@
 import React from 'react';
 import {makeStyles} from '@mui/styles';
-import cs from 'classnames';
+import cn from 'classnames';
 import backgroundImg from '../../assets/img/background-intro.jpg'
 import {LogoText} from "../../components/Logo/Text";
-import {LogoIcon} from "../../components/Logo/Icon";
 import Box from '@mui/material/Box';
 import {styled} from '@mui/material/styles';
 import Tooltip, {TooltipProps, tooltipClasses} from '@mui/material/Tooltip';
@@ -12,7 +11,12 @@ import SpotifyIcon from '../../assets/img/snLIst/spotify.png';
 import TwitterIcon from '../../assets/img/snLIst/twitter.png';
 import {Button, Typography} from "@mui/material";
 import AuthModalWindow from "./AuthModalWindow";
-import {AuthDataType} from "../../types";
+import LoadingButton from '@mui/lab/LoadingButton';
+import SendIcon from '@mui/icons-material/Send';
+import {useDispatch, useSelector} from "react-redux";
+import {logInThunk} from "../../redux/reducers/auth.reducer";
+import {AppStateType} from "../../redux/store";
+import {Redirect} from "react-router-dom";
 
 const useStyles = makeStyles(({
   wrapper: {
@@ -55,27 +59,32 @@ const useStyles = makeStyles(({
   authSide: {
     flex: '0 0 46%'
   },
-  authButtons: {
-    textAlign: 'center',
-  },
-  logInButton: {
+  authButton: {
+    color: '#ffffff',
+    borderRadius: '20px !important',
     width: '100%',
-    marginBottom: '10px',
-    borderRadius: '10px'
-  },
-  signUpButton: {
-    color: '#2F92E1',
-    fontSize: '12px'
+    height: '20xp',
+    marginBottom: '20px !important',
+    '& .MuiLoadingButton-loadingIndicator': {
+      right: '140px'
+    }
   }
 }));
 
-export const Auth: React.FC = () => {
+const Auth: React.FC = () => {
+  const isAuth = useSelector((state: AppStateType) => state.auth.isAuth)
   // styles.
   const classes = useStyles();
 
+  const dispatch = useDispatch();
+
+  // loading control.
+  const [loading, setLoading] = React.useState(false);
+  const handleClick = (load: boolean) => setLoading(load);
+
   // auth window control.
   const [openAuthWindow, setOpenAuthWindow] = React.useState(false);
-  const handleClickOpen = () => setOpenAuthWindow(true);
+  const handleOpen = () => setOpenAuthWindow(true);
   const handleClose = () => setOpenAuthWindow(false);
 
   const socialNetworkArray = [
@@ -96,11 +105,18 @@ export const Auth: React.FC = () => {
     },
   }));
 
+  React.useEffect(() => {
+    return handleClick(false);
+  })
+
+  if (isAuth) {
+    return <Redirect to="/home"/>;
+  }
   return (
     <div className={classes.wrapper}>
 
       {/* Левый приветственный блок. */}
-      <section className={cs(classes.bothSide, classes.greetSide)}>
+      <section className={cn(classes.bothSide, classes.greetSide)}>
         <div className={classes.greetSideInner}>
           <LogoText size={50} position={'center'} margin={'0 0 40px 0'}/>
           <Typography>
@@ -120,26 +136,31 @@ export const Auth: React.FC = () => {
         </div>
       </section>
 
-      {/* Правый блок авторизации. */}
-      <section className={cs(classes.bothSide, classes.authSide)}>
+      {/* Правый блок с кнопками для авторизации. */}
+      <section className={cn(classes.bothSide, classes.authSide)}>
         <div>
-          <LogoIcon width={40} height={40}/>
-          <Typography sx={{fontWeight: 'bold', m: 1}} style={{margin: '20px 0 0 0'}} variant='h2'>
+          <Typography sx={{fontWeight: 'bold', m: 1}} style={{margin: '20px 0'}} variant='h2'>
             Happening now
           </Typography>
-          <Typography style={{margin: '20px 0 '}}>Happening now</Typography>
-          <div className={classes.authButtons}>
-            <Button className={classes.logInButton} onClick={() => handleClickOpen()} color="primary"
+          <div>
+              <LoadingButton className={classes.authButton} onClick={async () => {
+                handleClick(true);
+                dispatch(logInThunk({email: 'markelovtrofim1337@gmail.com', password: '123'}))
+                handleClick(false);
+              }} style={{color: '#ffffff', boxShadow: 'none'}} color="primary" variant="contained" loadingPosition={'end'} endIcon={<SendIcon />} loading={loading}>
+                Войти как гость
+              </LoadingButton>
+            <Button className={classes.authButton} onClick={handleOpen} color="secondary"
                     variant="contained">Войти</Button><br/>
             <BootstrapTooltip title="Для регистрации тебе нужно перейти перейти в другое приложение.">
-              <Button className={classes.signUpButton} color="primary" target="_blank"
+              <Button className={classes.authButton} color="primary" target="_blank" variant="outlined"
                       href='https://social-network.samuraijs.com/signUp'>Зарегистрироваться</Button>
             </BootstrapTooltip>
           </div>
         </div>
       </section>
 
-      {/* Модальное окно аутентификации. */}
+      {/* Модальное окно авторизации. */}
       <AuthModalWindow
         openAuthWindow={openAuthWindow} handleClose={handleClose}
       />
@@ -147,3 +168,5 @@ export const Auth: React.FC = () => {
     </div>
   );
 };
+
+export default Auth;

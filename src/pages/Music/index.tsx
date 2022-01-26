@@ -21,7 +21,7 @@ const Music: React.FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTracks())
-  }, [])
+  }, [dispatch])
 
   return (
     <div className={styles.box}>
