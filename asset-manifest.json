@@ -1,18 +1,25 @@
 {
-  "main.css": "/typical-network/static/css/main.adab4b90.chunk.css",
-  "main.js": "/typical-network/static/js/main.eee4adf1.chunk.js",
-  "main.js.map": "/typical-network/static/js/main.eee4adf1.chunk.js.map",
-  "static/js/1.bb7c8ec2.chunk.js": "/typical-network/static/js/1.bb7c8ec2.chunk.js",
-  "static/js/1.bb7c8ec2.chunk.js.map": "/typical-network/static/js/1.bb7c8ec2.chunk.js.map",
-  "static/js/2.cac3bcb6.chunk.js": "/typical-network/static/js/2.cac3bcb6.chunk.js",
-  "static/js/2.cac3bcb6.chunk.js.map": "/typical-network/static/js/2.cac3bcb6.chunk.js.map",
-  "runtime~main.js": "/typical-network/static/js/runtime~main.ef4816e3.js",
-  "runtime~main.js.map": "/typical-network/static/js/runtime~main.ef4816e3.js.map",
-  "static/media/Login.module.css": "/typical-network/static/media/BredaTwo.6fd7751e.ttf",
-  "static/media/ProfileGeneral.module.css": "/typical-network/static/media/tokio.618a6979.png",
-  "static/media/Intro.module.css": "/typical-network/static/media/background-intro.bc098565.jpg",
-  "static/css/main.adab4b90.chunk.css.map": "/typical-network/static/css/main.adab4b90.chunk.css.map",
-  "index.html": "/typical-network/index.html",
-  "precache-manifest.a388419dbf8dda37cea0cbd4ca5c3418.js": "/typical-network/precache-manifest.a388419dbf8dda37cea0cbd4ca5c3418.js",
-  "service-worker.js": "/typical-network/service-worker.js"
+  "files": {
+    "main.css": "/static/css/main.bbcc9399.chunk.css",
+    "main.js": "/static/js/main.7989a7a7.chunk.js",
+    "main.js.map": "/static/js/main.7989a7a7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ae1b258c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ae1b258c.js.map",
+    "static/js/2.cb08bc51.chunk.js": "/static/js/2.cb08bc51.chunk.js",
+    "static/js/2.cb08bc51.chunk.js.map": "/static/js/2.cb08bc51.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.bbcc9399.chunk.css.map": "/static/css/main.bbcc9399.chunk.css.map",
+    "static/js/2.cb08bc51.chunk.js.LICENSE.txt": "/static/js/2.cb08bc51.chunk.js.LICENSE.txt",
+    "static/media/Header.module.css": "/static/media/BredaTwo.45ba5d47.ttf",
+    "static/media/background-intro.b966c5df.jpg": "/static/media/background-intro.b966c5df.jpg",
+    "static/media/preloader.b85e24f6.svg": "/static/media/preloader.b85e24f6.svg",
+    "static/media/Misuc.module.css": "/static/media/spotify-font-regular.0a910c0b.ttf",
+    "static/media/ProfileGeneral.module.css": "/static/media/tokio.ba5d0911.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ae1b258c.js",
+    "static/js/2.cb08bc51.chunk.js",
+    "static/css/main.bbcc9399.chunk.css",
+    "static/js/main.7989a7a7.chunk.js"
+  ]
 }
